@@ -15,17 +15,18 @@ public class Friend {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "user_id", nullable = false, length = 20)
+    private long userId;
+
     @Column(name = "username", nullable = false, length = 20)
     private String username;
 
     @Column(name = "email", nullable = false, length = 50)
     private String email;
 
-    // @Column(name = "user_id")
-    // private String userId;
-
     public Friend(long id, long userId, String username, String email) {
         this.id = id;
+        this.userId = userId;
         this.username = username;
         this.email = email;
     }
@@ -57,12 +58,13 @@ public class Friend {
         this.email = email;
     }
 
-    // public String getUserId() {
-    //     return userId;
-    // }
+    public long getUserId() {
+        return userId;
+    }
 
-    // public void setUserId(String userId) {
-    //     this.userId = userId;
-    // }
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
 
 }

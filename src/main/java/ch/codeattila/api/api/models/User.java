@@ -47,7 +47,7 @@ public class User {
     private String createdOn;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "owner_id", nullable = false)
     private List<Friend> friends = new ArrayList<Friend>();
 
     public User() {
